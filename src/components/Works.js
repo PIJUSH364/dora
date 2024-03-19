@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { DoraContext } from "../Context";
+
 const PortfolioIsotope = dynamic(() => import("./PortfolioIsotope"), {
   ssr: false,
 });
@@ -16,8 +17,9 @@ const Works = () => {
           <h2>My Amazing Works</h2>
         </div>
         {/* Work Isotope */}
-        {user?.projects && <PortfolioIsotope projects={user.projects} />}
 
+
+        {user?.projects && <PortfolioIsotope projects={user.projects} />}
       </div>
     </section>
   );
